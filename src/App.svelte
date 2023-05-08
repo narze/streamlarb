@@ -1,9 +1,22 @@
 <script lang="ts">
-  import Greet from './lib/Greet.svelte'
+  import { listen } from "@tauri-apps/api/event"
+  import Greet from "./lib/Greet.svelte"
+  import { appWindow } from "@tauri-apps/api/window"
+
+  let state = "focus"
+  listen("tauri://blur", (event) => {
+    state = "blur"
+  })
+
+  listen("tauri://focus", (event) => {
+    state = "focus"
+  })
 </script>
 
 <main class="container">
   <h1>Welcome to Tauri!</h1>
+
+  <p>State: {state}</p>
 
   <div class="row">
     <a href="https://vitejs.dev" target="_blank">
@@ -17,15 +30,11 @@
     </a>
   </div>
 
-  <p>
-    Click on the Tauri, Vite, and Svelte logos to learn more.
-  </p>
+  <p>Click on the Tauri, Vite, and Svelte logos to learn more.</p>
 
   <div class="row">
     <Greet />
   </div>
-
-
 </main>
 
 <style>
