@@ -42,8 +42,11 @@
         "resizable": true,
         "title": "streamlarb-v2",
         "width": 800,
-        "height": 600
+        "height": 600,
+        "transparent": true,
+        "decorations": false
       }
-    ]
+    ],
+    "macOSPrivateApi": true
   }
 }
