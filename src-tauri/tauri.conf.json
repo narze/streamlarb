@@ -20,7 +20,9 @@
       "window": {
         "setIgnoreCursorEvents": true,
         "startDragging": true,
-        "maximize": true
+        "maximize": true,
+        "create": true,
+        "close": true
       }
     },
     "bundle": {
